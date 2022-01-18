@@ -1,0 +1,337 @@
+/*
+  reset
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/*
+  vars
+ */
+
+:root {
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+
+  --color-primary: #4a4a4a;
+  --color-secondary: #7f7f7f;
+
+  --color-hightlight: #fdd46e;
+
+  --color-link-default: rgba(74, 74, 74, 0.8);
+  --color-link-hover: rgba(74, 74, 74, 1.0);
+}
+
+/*
+  components
+ */
+
+.brand-small {
+  color: var(--color-hightlight);
+  font-family: 'Mali', cursive;
+  font-weight: bold;
+  font-size: 0.8em;
+  font-variant: small-caps;
+}
+
+nav > a, .link {
+  font-weight: bold;
+  font-variant: small-caps;
+  color: var(--color-link-default);
+}
+
+nav > a:hover, .link:hover {
+  color: var(--color-link-hover);
+  text-shadow: 0.5px 0.5px rgb(74, 74, 74);
+}
+
+/*
+  common
+ */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  background-color: var(--bg-primary);
+  color: var(--color-primary);
+
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-family: 'Mali', cursive;
+
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+/*
+  layout
+ */
+
+.header-main {
+  margin-top: 1em;
+}
+
+.header-main, .main {
+  margin-bottom: 4em;
+}
+
+/*
+  header
+ */
+
+.nav-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.nav-main nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.nav-main nav a {
+  text-align: center;
+  background-color: var(--bg-secondary);
+  padding: 0.7em;
+  width: 90%;
+}
+
+.banner {
+  padding: 2em 2em 0 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.banner img {
+  width: 80%;
+}
+
+.banner figcaption {
+  font-family: 'Mali', cursive;
+  color: var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+  .nav-main nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-main nav a {
+    background-color: inherit;
+  }
+
+  .banner {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  .banner img {
+    flex: 1;
+  }
+
+  .banner figcaption {
+    text-align: left;
+    flex: 3;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header-main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-main {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .nav-main nav {
+    width: fit-content;
+    padding-bottom: 0;
+    margin-left: auto;
+  }
+
+  .nav-main nav a {
+    width: fit-content;
+  }
+}
+
+/*
+  main
+ */
+
+.main {
+  text-align: center;
+}
+
+.main section {
+  padding: 1.5em 1em;
+
+}
+
+.main section h2 {
+  margin-bottom: 1.5em;
+}
+
+/*
+  main - skills
+ */
+
+.skills {
+  background-color: var(--bg-secondary);
+}
+
+/*
+  main - portfolio
+ */
+
+.portfolio {
+  background-color: var(--bg-secondary);
+}
+
+.project img {
+  max-width: 100%;
+}
+
+.projects .project:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.project h3 {
+  padding: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2%;
+  }
+
+  .project {
+    flex: 1 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+  }
+
+  .project {
+    flex: 1 32%;
+  }
+}
+
+/*
+  main - contact
+ */
+
+.contact {
+  background-color: var(--bg-primary);
+}
+
+.contact address a.link {
+  font-family: 'Mali', cursive;
+  cursor: pointer;
+  font-variant: normal;
+  letter-spacing: 1px;
+}
+
+.contact p {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .contact {
+    width: 80%;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/*
+  footer
+ */
+
+.footer-main {
+  border-top: 2px solid #e7e7e7;
+  padding: 2em 0;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer-main .nav-large {
+  display: none;
+}
+
+.footer-main .nav-footer {
+  margin-left: auto;
+  font-size: 0.8rem;
+}
+
+
+@media (min-width: 768px) {
+  .footer-main .nav-small {
+    display: none;
+  }
+
+  .footer-main .nav-large {
+    display: flex;
+    gap: 3em;
+  }
+}
